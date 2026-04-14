@@ -8,8 +8,8 @@ const Navbar = () => {
       text: "Home",
     },
     {
-      path: "/apps",
-      text: "Apps",
+      path: "/timeline",
+      text: "Timeline",
     },
     {
       path: "/installedApps",

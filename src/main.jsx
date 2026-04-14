@@ -6,6 +6,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from "./layout/Root";
 import Homepage from "./pages/homepage/Homepage";
+import Friends from "./pages/friends/Friends";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         index:true,
         Component:Homepage
+      },
+      {
+        path:'/friends',
+        Component:Friends
       }
     ]
   },
