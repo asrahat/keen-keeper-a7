@@ -8,6 +8,8 @@ import Root from "./layout/Root";
 import Homepage from "./pages/homepage/Homepage";
 import Friends from "./pages/friends/Friends";
 import FriendDetails from "./pages/friendDetails/FriendDetails";
+import SelectFriends from "./pages/selectFriends/SelectFriends";
+import SelectFriendsProvider from "./context/selectFriendsProvider";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,12 +26,20 @@ const router = createBrowserRouter([
       {
         path:'/friends/:id',
         Component:FriendDetails
+      },
+      {
+        path:'/selectedFriends',
+        Component:SelectFriends,
       }
     ]
   },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />,
+    <SelectFriendsProvider>
+
+      <RouterProvider router={router} />,
+    </SelectFriendsProvider>
+    
   </StrictMode>,
 );

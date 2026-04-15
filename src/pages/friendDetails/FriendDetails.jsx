@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFriends from "../../hooks/useFriends";
+import { SelectFriendsContext } from "../../context/selectFriendsProvider";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -12,6 +13,9 @@ const FriendDetails = () => {
   const isFriendExist = friends.find((friend) => String(friend.id) === id);
   console.log(isFriendExist);
 
+
+   const { selectedFriends, setSelectedFriends }=useContext(SelectFriendsContext);
+
   if (loading) {
     return (
       <div className="h-[60vh] flex justify-center items-center">
@@ -19,6 +23,12 @@ const FriendDetails = () => {
       </div>
     );
   }
+
+  const handleSelectedFriends =()=>{
+    setSelectedFriends([...selectedFriends,isFriendExist]);
+    alert(`${isFriendExist.name} is Selected`)
+  }
+
   return (
    
     <div className="container mx-auto md:flex justify-between items-center gap-5 my-10">
@@ -81,15 +91,15 @@ const FriendDetails = () => {
         <div className="border border-zinc-100 shadow-xl p-4  rounded-xl">
           <h2 className="text-xl font-bold mb-3">Quick Check-In</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer">
+            <div onClick={handleSelectedFriends} className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer">
             <h2 className="text-2xl font-bold">3</h2>
             <p className="text-xl font-semibold text-zinc-500">Call</p>
           </div>
-            <div className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer">
+            <div onClick={handleSelectedFriends} className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer">
             <h2 className="text-2xl font-bold">3</h2>
             <p className="text-xl font-semibold text-zinc-500">Text</p>
           </div>
-            <div className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer">
+            <div onClick={handleSelectedFriends} className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer">
             <h2 className="text-2xl font-bold">3</h2>
             <p className="text-xl font-semibold text-zinc-500">Video</p>
           </div>
