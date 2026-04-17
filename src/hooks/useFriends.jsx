@@ -6,9 +6,7 @@ const useFriends = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5173/friends.json",{
-        cache:"no-store"
-      });
+      const res = await fetch("/friends.json");
       const data = await res.json();
 
       setFriends(data);
