@@ -12,6 +12,7 @@ import SelectFriends from "./pages/selectFriends/SelectFriends";
 import SelectFriendsProvider from "./context/selectFriendsProvider";
 import Stats from "./pages/stats/Stats";
 import { ToastContainer } from "react-toastify";
+import NotFound from "./pages/notFound/NotFound";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,8 +38,10 @@ const router = createBrowserRouter([
         path:'/stats',
         Component:Stats
       }
-    ]
+    ],
+    errorElement:<NotFound></NotFound>
   },
+
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
