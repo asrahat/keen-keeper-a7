@@ -12,8 +12,8 @@ const Navbar = () => {
       text: "Timeline",
     },
     {
-      path: "/dashboard",
-      text: "Dashboard",
+      path: "/stats",
+      text: "Stats",
     },
   ];
   return (

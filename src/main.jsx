@@ -10,6 +10,7 @@ import Friends from "./pages/friends/Friends";
 import FriendDetails from "./pages/friendDetails/FriendDetails";
 import SelectFriends from "./pages/selectFriends/SelectFriends";
 import SelectFriendsProvider from "./context/selectFriendsProvider";
+import Stats from "./pages/stats/Stats";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path:'/selectedFriends',
         Component:SelectFriends,
+      },
+      {
+        path:'/stats',
+        Component:Stats
       }
     ]
   },
