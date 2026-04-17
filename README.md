@@ -6,7 +6,7 @@
 
 ##  Live Demo
 
-**[🔗 View Live Demo]()**  
+**[🔗 View Live Demo](https://vocal-queijadas-269140.netlify.app/)**  
 ---
 
 ## Technologies Used
