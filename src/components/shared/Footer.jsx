@@ -6,7 +6,7 @@ import XImg from "../../assets/twitter.png";
 import { Link } from "react-router";
 const Footer = () => {
   return (
-    <footer className="bg-[#244d3f] flex flex-col justify-center items-center text-primary-content p-10 space-y-3">
+    <footer className="bg-[#244d3f] footer flex flex-col justify-center items-center text-primary-content p-10 space-y-3">
       <img src={logoImg} alt="" />
       <p className="text-lg font-semibold">
         Your personal shelf of meaningful connections. Browse, tend, and nurture

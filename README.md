@@ -12,6 +12,7 @@
 ## Technologies Used
 - **React.js**
 - **Tailwind CSS**
+- **Daisy UI**
 - **Recharts**
 - **React Icons** (Icons)
 - **React Toastify**
