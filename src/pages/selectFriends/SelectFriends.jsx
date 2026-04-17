@@ -10,9 +10,7 @@ const SelectFriends = () => {
   console.log(setSelectedFriends, "selectedFriends");
   return (
     <div className="container mx-auto my-10">
-      {selectedFriends.length === 0 ? (
-        <div>
-          <div className="my-4">
+      <div className="my-4">
             <select className="select">
               <option value="all" disabled selected>Filter timeline</option>
               <option value="text">Text</option>
@@ -20,13 +18,14 @@ const SelectFriends = () => {
               <option value="Video">Video</option>
             </select>
           </div>
+      {selectedFriends.length === 0 ? (
+        
           <div className="flex flex-col justify-center items-center space-y-4">
             <h2 className=" text-2xl font-bold">No data found!</h2>
             <Link to="/">
               <button className="btn bg-[#244d3f] text-white">Go Back</button>
             </Link>
           </div>
-        </div>
       ) : (
         selectedFriends.map((friend, idx) => (
           <div

@@ -1,5 +1,6 @@
 import React from "react";
 import useFriends from "../hooks/useFriends";
+import { MdAdd } from "react-icons/md";
 
 const Banner = () => {
   const { friends } = useFriends();
@@ -18,7 +19,8 @@ const Banner = () => {
       </div>
 
       <button className="btn bg-[#244d3f] text-white border-zinc-300 mr-4">
-        Add to Friend
+       <MdAdd className="text-xl"/>
+ Add to Friend
       </button>
       </div>
 

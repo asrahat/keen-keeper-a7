@@ -1,19 +1,25 @@
 import React from "react";
 import Navlinks from "./Navlinks";
 import logoImg from '../../assets/logo.png'
+import { CiHome } from "react-icons/ci";
+import { ImStatsDots } from "react-icons/im";
+import { IoMdTime } from "react-icons/io";
 const Navbar = () => {
     const navItems = [
     {
       path: "/",
       text: "Home",
+      icon:<CiHome />
     },
     {
       path: "/selectedFriends",
       text: "Timeline",
+      icon: <IoMdTime />
     },
     {
       path: "/stats",
       text: "Stats",
+      icon: <ImStatsDots />
     },
   ];
   return (
@@ -42,7 +48,8 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
              {navItems.map((item, index) => (
-            <Navlinks key={index} to={item.path}>
+            <Navlinks className='flex' key={index} to={item.path}>
+              {item.icon}
               {item.text}
             </Navlinks>
           ))}
@@ -53,7 +60,8 @@ const Navbar = () => {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navItems.map((item, index) => (
-            <Navlinks key={index} to={item.path}>
+            <Navlinks  className='flex items-center gap-1 text-lg'  key={index} to={item.path}>
+              {item.icon}
               {item.text}
             </Navlinks>
           ))}

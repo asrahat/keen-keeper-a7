@@ -2,6 +2,13 @@ import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFriends from "../../hooks/useFriends";
 import { SelectFriendsContext } from "../../context/selectFriendsProvider";
+import { HiOutlineBellSnooze } from "react-icons/hi2";
+import { RiInboxArchiveLine } from "react-icons/ri";
+import { MdDeleteOutline } from "react-icons/md";
+import { FiPhoneCall } from "react-icons/fi";
+import { IoMdText } from "react-icons/io";
+import { CiVideoOn } from "react-icons/ci";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -39,7 +46,7 @@ const FriendDetails = () => {
     };
 
     setSelectedFriends([...selectedFriends, newItem]);
-    alert(`${type} scheduled with ${isFriendExist.name}`);
+    toast.success(`${type} scheduled with ${isFriendExist.name}`);
   };
 
   return (
@@ -72,13 +79,16 @@ const FriendDetails = () => {
         </div>
         <div className=" flex flex-col items-center space-y-3">
           <button className="btn w-full backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-            Snooze 2 Week
+           <HiOutlineBellSnooze />
+ Snooze 2 Week
           </button>
           <button className="btn w-full backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-            Archive
+           <RiInboxArchiveLine />
+ Archive
           </button>
           <button className="btn w-full backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-red-500">
-            Delete
+           <MdDeleteOutline />
+ Delete
           </button>
         </div>
       </div>
@@ -120,23 +130,25 @@ const FriendDetails = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div
               onClick={() => handleSelectedFriends("Call")}
-              className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer"
+              className="flex flex-col items-center  backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer"
             >
-              <h2 className="text-2xl font-bold">3</h2>
+              <h2 className="text-2xl font-bold"><FiPhoneCall /></h2>
               <p className="text-xl font-semibold text-zinc-500">Call</p>
             </div>
             <div
               onClick={() => handleSelectedFriends("Text")}
-              className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer"
+              className="flex flex-col items-center  backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer"
             >
-              <h2 className="text-2xl font-bold">3</h2>
+              <h2 className="text-2xl font-bold"><IoMdText />
+</h2>
               <p className="text-xl font-semibold text-zinc-500">Text</p>
             </div>
             <div
               onClick={() => handleSelectedFriends("Video")}
-              className="backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer"
+              className="flex flex-col items-center backdrop-blur-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-zinc-100  px-12 py-6 text-center rounded-xl cursor-pointer"
             >
-              <h2 className="text-2xl font-bold">3</h2>
+              <h2 className="text-2xl font-bold"><CiVideoOn />
+</h2>
               <p className="text-xl font-semibold text-zinc-500">Video</p>
             </div>
           </div>

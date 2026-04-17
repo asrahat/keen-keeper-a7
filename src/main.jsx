@@ -11,6 +11,7 @@ import FriendDetails from "./pages/friendDetails/FriendDetails";
 import SelectFriends from "./pages/selectFriends/SelectFriends";
 import SelectFriendsProvider from "./context/selectFriendsProvider";
 import Stats from "./pages/stats/Stats";
+import { ToastContainer } from "react-toastify";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +45,7 @@ createRoot(document.getElementById("root")).render(
     <SelectFriendsProvider>
 
       <RouterProvider router={router} />,
+      <ToastContainer position="top-center" />
     </SelectFriendsProvider>
     
   </StrictMode>,
